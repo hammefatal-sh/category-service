@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CategoryRepositoryImplTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CategoryRepositoryImplTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.categoryservice.infrastructure.persistence.html">com.example.categoryservice.infrastructure.persistence</a> &gt; CategoryRepositoryImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">7</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.384s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">다음_ID_생성()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">루트_카테고리_조회()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">부모_카테고리로_하위_카테고리_조회()</td>
+<td class="success">0.346s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">빈_데이터에서_다음_ID_생성()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">카테고리_삭제()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">카테고리_저장_및_조회()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">하위_카테고리_존재_확인()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>23:03:42.271 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.categoryservice.infrastructure.persistence.CategoryRepositoryImplTest]: CategoryRepositoryImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:03:42.315 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.categoryservice.CategoryServiceApplication for test class com.example.categoryservice.infrastructure.persistence.CategoryRepositoryImplTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-09-15T23:03:42.443+09:00  INFO 1439 --- [category-service] [    Test worker] c.e.c.i.p.CategoryRepositoryImplTest     : Starting CategoryRepositoryImplTest using Java 21.0.5 with PID 1439 (started by hammefatal in /Volumes/SunhongSSD/DigitalWorkshop/category-service)
+2025-09-15T23:03:42.443+09:00 DEBUG 1439 --- [category-service] [    Test worker] c.e.c.i.p.CategoryRepositoryImplTest     : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-09-15T23:03:42.444+09:00  INFO 1439 --- [category-service] [    Test worker] c.e.c.i.p.CategoryRepositoryImplTest     : The following 1 profile is active: &quot;test&quot;
+2025-09-15T23:03:42.569+09:00  INFO 1439 --- [category-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-15T23:03:42.590+09:00  INFO 1439 --- [category-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2025-09-15T23:03:42.604+09:00  INFO 1439 --- [category-service] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-09-15T23:03:42.659+09:00  INFO 1439 --- [category-service] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:d3719af2-8b9c-4cff-8b0e-4aa26e57b8b3;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-09-15T23:03:42.752+09:00  INFO 1439 --- [category-service] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-15T23:03:42.772+09:00  INFO 1439 --- [category-service] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-09-15T23:03:42.781+09:00  INFO 1439 --- [category-service] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-15T23:03:42.846+09:00  INFO 1439 --- [category-service] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-15T23:03:43.105+09:00  INFO 1439 --- [category-service] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-15T23:03:43.109+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists categories cascade 
+Hibernate: 
+    drop table if exists categories cascade 
+2025-09-15T23:03:43.111+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    create table categories (
+        created_at timestamp(6) not null,
+        id bigint not null,
+        parent_id bigint,
+        updated_at timestamp(6) not null,
+        name varchar(100) not null,
+        description varchar(500),
+        primary key (id)
+    )
+Hibernate: 
+    create table categories (
+        created_at timestamp(6) not null,
+        id bigint not null,
+        parent_id bigint,
+        updated_at timestamp(6) not null,
+        name varchar(100) not null,
+        description varchar(500),
+        primary key (id)
+    )
+2025-09-15T23:03:43.114+09:00  INFO 1439 --- [category-service] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-15T23:03:43.197+09:00  INFO 1439 --- [category-service] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-15T23:03:43.463+09:00  INFO 1439 --- [category-service] [    Test worker] c.e.c.i.p.CategoryRepositoryImplTest     : Started CategoryRepositoryImplTest in 1.125 seconds (process running for 1.486)
+2025-09-15T23:03:43.747+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.759+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.759+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.787+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.789+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.789+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.790+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id=?
+2025-09-15T23:03:43.814+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.815+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.815+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.818+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.819+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.819+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.819+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id is null
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id is null
+2025-09-15T23:03:43.825+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        coalesce(max(c1_0.id), 0) 
+    from
+        categories c1_0
+Hibernate: 
+    select
+        coalesce(max(c1_0.id), 0) 
+    from
+        categories c1_0
+2025-09-15T23:03:43.829+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.834+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.839+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.840+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    delete 
+    from
+        categories 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        categories 
+    where
+        id=?
+2025-09-15T23:03:43.840+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.841+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.843+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.844+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.846+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.846+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.847+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        count(*)&gt;0 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id=?
+Hibernate: 
+    select
+        count(*)&gt;0 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id=?
+2025-09-15T23:03:43.847+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        count(*)&gt;0 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id=?
+Hibernate: 
+    select
+        count(*)&gt;0 
+    from
+        categories c1_0 
+    where
+        c1_0.parent_id=?
+2025-09-15T23:03:43.850+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.851+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.created_at,
+        c1_0.description,
+        c1_0.name,
+        c1_0.parent_id,
+        c1_0.updated_at 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-09-15T23:03:43.851+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.852+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        categories
+        (created_at, description, name, parent_id, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-09-15T23:03:43.852+09:00 DEBUG 1439 --- [category-service] [    Test worker] org.hibernate.SQL                        : 
+    select
+        coalesce(max(c1_0.id), 0) 
+    from
+        categories c1_0
+Hibernate: 
+    select
+        coalesce(max(c1_0.id), 0) 
+    from
+        categories c1_0
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (/Users/hammefatal/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12.1</a> at 2025. 9. 15. 오후 11:03:43</p>
+</div>
+</div>
+</body>
+</html>

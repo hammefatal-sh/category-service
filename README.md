@@ -16,6 +16,7 @@
   2. DetailedDesign.md 문서의 Step 1 부분까지 구현하고, SpringBoot 어플리케이션이 정상 동작하는지 확인해줘.
   3. Step 2 구현하고, 테스트까지 해줘.
   4. Step 3 구현하고, 테스트까지 해줘.
+  5. Step 4 구현하고, 테스트까지 해줘.
 
 ## API 명세
 - http://localhost:8080/swagger-ui.html

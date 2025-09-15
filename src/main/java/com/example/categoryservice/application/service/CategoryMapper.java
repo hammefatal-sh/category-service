@@ -7,9 +7,7 @@ import com.example.categoryservice.domain.model.Category;
 import com.example.categoryservice.domain.model.CategoryId;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
@@ -31,10 +29,13 @@ public class CategoryMapper {
     }
 
     public CategoryTreeResponse toCategoryTree(List<Category> categories, CategoryId rootCategoryId) {
-        Map<CategoryId, List<Category>> categoryMap = categories.stream()
-            .collect(Collectors.groupingBy(
-                category -> category.getParentId() != null ? category.getParentId() : null
-            ));
+        Map<CategoryId, List<Category>> categoryMap = new HashMap<>();
+
+        // 카테고리를 부모 ID별로 그룹핑 (null 키 허용)
+        for (Category category : categories) {
+            CategoryId parentId = category.getParentId();
+            categoryMap.computeIfAbsent(parentId, k -> new ArrayList<>()).add(category);
+        }
 
         List<CategoryNodeResponse> roots;
         if (rootCategoryId == null) {

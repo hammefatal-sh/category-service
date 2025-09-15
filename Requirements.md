@@ -5,9 +5,6 @@
 ### 1.1 서비스 개요
 - **서비스명**: Category Service
 - **목적**: 온라인 쇼핑몰의 상품 카테고리 관리를 위한 마이크로서비스
-- **아키텍처**: Hexagonal Architecture (Ports & Adapters Pattern)
-- **개발 언어**: Java 17
-- **프레임워크**: Spring Boot 3.2.0
 
 ### 1.2 기술 스택
 - **Framework**: Spring Boot 3.2.0
