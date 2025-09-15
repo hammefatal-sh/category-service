@@ -19,8 +19,16 @@ spring:
       path: /h2-console
   cache:
     type: caffeine
-    caffeine:
-      spec: maximumSize=1000,expireAfterAccess=300s
+
+# Application specific configurations
+app:
+  cache:
+    categories:
+      maximum-size: 5000
+      expire-after-access: PT15M
+    category-tree:
+      maximum-size: 100
+      expire-after-write: PT5M
 
 server:
   port: 8080
