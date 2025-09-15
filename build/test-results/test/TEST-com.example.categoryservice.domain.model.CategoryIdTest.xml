@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.categoryservice.domain.model.CategoryIdTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-09-15T14:25:25" hostname="Sunhong-Mac-mini.local" time="0.005">
+<testsuite name="com.example.categoryservice.domain.model.CategoryIdTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-09-15T14:35:35" hostname="Sunhong-Mac-mini.local" time="0.003">
   <properties/>
   <testcase name="영_값으로_CategoryId_생성시_예외발생()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.0"/>
   <testcase name="정상적인_값으로_CategoryId_생성()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.0"/>
   <testcase name="null_값으로_CategoryId_생성시_예외발생()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.0"/>
   <testcase name="다른_값을_가진_CategoryId는_동등하지_않다()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.001"/>
-  <testcase name="toString_메서드_테스트()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.001"/>
-  <testcase name="음수_값으로_CategoryId_생성시_예외발생()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.0"/>
+  <testcase name="toString_메서드_테스트()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.0"/>
+  <testcase name="음수_값으로_CategoryId_생성시_예외발생()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.001"/>
   <testcase name="같은_값을_가진_CategoryId는_동등하다()" classname="com.example.categoryservice.domain.model.CategoryIdTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

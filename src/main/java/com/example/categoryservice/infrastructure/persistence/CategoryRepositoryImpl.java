@@ -60,4 +60,14 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         Long maxId = jpaRepository.findMaxId();
         return maxId + 1;
     }
+
+    @Override
+    public long count() {
+        return jpaRepository.count();
+    }
+
+    @Override
+    public long countRootCategories() {
+        return jpaRepository.countRootCategories();
+    }
 }

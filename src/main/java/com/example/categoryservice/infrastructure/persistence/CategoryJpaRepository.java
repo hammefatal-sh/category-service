@@ -20,4 +20,7 @@ public interface CategoryJpaRepository extends JpaRepository<Category, CategoryI
 
     @Query("SELECT COALESCE(MAX(c.id.value), 0) FROM Category c")
     Long findMaxId();
+
+    @Query("SELECT COUNT(c) FROM Category c WHERE c.parentId IS NULL")
+    long countRootCategories();
 }

@@ -52,4 +52,14 @@ public interface CategoryRepository {
      * 다음 사용 가능한 ID를 생성합니다.
      */
     Long generateNextId();
+
+    /**
+     * 전체 카테고리 개수를 반환합니다.
+     */
+    long count();
+
+    /**
+     * 루트 카테고리 개수를 반환합니다.
+     */
+    long countRootCategories();
 }

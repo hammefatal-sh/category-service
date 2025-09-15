@@ -1,29 +1,136 @@
 package com.example.categoryservice.infrastructure.config;
 
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.media.Content;
+import io.swagger.v3.oas.models.media.MediaType;
+import io.swagger.v3.oas.models.media.Schema;
+import io.swagger.v3.oas.models.responses.ApiResponse;
+import io.swagger.v3.oas.models.responses.ApiResponses;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
+import io.swagger.v3.oas.models.tags.Tag;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Configuration
 public class OpenApiConfig {
 
+    @Value("${spring.application.name:category-service}")
+    private String applicationName;
+
+    @Value("${server.port:8080}")
+    private String serverPort;
+
     @Bean
     public OpenAPI categoryServiceOpenAPI() {
         return new OpenAPI()
-            .info(new Info()
+                .info(apiInfo())
+                .servers(serverList())
+                .tags(tagList())
+                .components(apiComponents())
+                .externalDocs(externalDocumentation());
+    }
+
+    private Info apiInfo() {
+        return new Info()
                 .title("Category Service API")
-                .description("온라인 쇼핑몰 카테고리 관리 서비스")
+                .description("온라인 쇼핑몰의 상품 카테고리 관리를 위한 RESTful API 서비스입니다.\n\n" +
+                        "이 API는 다음 기능을 제공합니다:\n" +
+                        "- 카테고리 CRUD 작업\n" +
+                        "- 계층적 카테고리 트리 구조 관리\n" +
+                        "- 캐시를 활용한 고성능 조회\n" +
+                        "- 다양한 형태의 카테고리 조회 (단일, 트리, 전체)")
                 .version("v1.0.0")
                 .contact(new Contact()
-                    .name("Development Team")
-                    .email("dev@example.com")))
-            .servers(List.of(
-                new Server().url("http://localhost:8080").description("Local Development Server")
-            ));
+                        .name("Development Team")
+                        .email("dev@example.com")
+                        .url("https://github.com/example/category-service"))
+                .license(new License()
+                        .name("MIT License")
+                        .url("https://opensource.org/licenses/MIT"))
+                .termsOfService("https://example.com/terms");
+    }
+
+    private List<Server> serverList() {
+        return List.of(
+                new Server()
+                        .url("http://localhost:" + serverPort)
+                        .description("Local Development Server"),
+                new Server()
+                        .url("https://api-dev.example.com")
+                        .description("Development Server"),
+                new Server()
+                        .url("https://api.example.com")
+                        .description("Production Server")
+        );
+    }
+
+    private List<Tag> tagList() {
+        return List.of(
+                new Tag()
+                        .name("Categories")
+                        .description("카테고리 관리 API")
+                        .externalDocs(new ExternalDocumentation()
+                                .description("카테고리 관리 가이드")
+                                .url("https://docs.example.com/categories")),
+                new Tag()
+                        .name("Health")
+                        .description("서비스 상태 확인 API")
+        );
+    }
+
+    private Components apiComponents() {
+        return new Components()
+                .schemas(commonSchemas())
+                .responses(commonResponses());
+    }
+
+    private Map<String, Schema> commonSchemas() {
+        Schema<?> errorResponse = new Schema<>()
+                .type("object")
+                .addProperty("code", new Schema<>().type("string").description("에러 코드"))
+                .addProperty("message", new Schema<>().type("string").description("에러 메시지"))
+                .addProperty("timestamp", new Schema<>().type("string").format("date-time").description("에러 발생 시간"));
+
+        Map<String, Schema> schemas = new HashMap<>();
+        schemas.put("ErrorResponse", errorResponse);
+        return schemas;
+    }
+
+    private ApiResponses commonResponses() {
+        return new ApiResponses()
+                .addApiResponse("400", new ApiResponse()
+                        .description("잘못된 요청")
+                        .content(new Content()
+                                .addMediaType("application/json",
+                                        new MediaType().schema(new Schema<>().$ref("#/components/schemas/ErrorResponse")))))
+                .addApiResponse("404", new ApiResponse()
+                        .description("리소스를 찾을 수 없음")
+                        .content(new Content()
+                                .addMediaType("application/json",
+                                        new MediaType().schema(new Schema<>().$ref("#/components/schemas/ErrorResponse")))))
+                .addApiResponse("500", new ApiResponse()
+                        .description("서버 내부 오류")
+                        .content(new Content()
+                                .addMediaType("application/json",
+                                        new MediaType().schema(new Schema<>().$ref("#/components/schemas/ErrorResponse")))));
+    }
+
+    private ExternalDocumentation externalDocumentation() {
+        return new ExternalDocumentation()
+                .description("Category Service 완전 가이드")
+                .url("https://docs.example.com/category-service");
     }
 }

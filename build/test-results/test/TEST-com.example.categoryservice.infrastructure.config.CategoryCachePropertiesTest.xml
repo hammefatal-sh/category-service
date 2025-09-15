@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CategoryCacheProperties 테스트" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-09-15T14:35:35" hostname="Sunhong-Mac-mini.local" time="0.001">
+  <properties/>
+  <testcase name="categories와 categoryTree 설정 독립성 확인" classname="com.example.categoryservice.infrastructure.config.CategoryCachePropertiesTest" time="0.0"/>
+  <testcase name="기본 값으로 CategoryCacheProperties 생성 시 올바른 기본값 설정" classname="com.example.categoryservice.infrastructure.config.CategoryCachePropertiesTest" time="0.0"/>
+  <testcase name="CacheSpec 값 수정 가능" classname="com.example.categoryservice.infrastructure.config.CategoryCachePropertiesTest" time="0.0"/>
+  <testcase name="CacheSpec 기본값 테스트" classname="com.example.categoryservice.infrastructure.config.CategoryCachePropertiesTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

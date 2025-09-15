@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ApplicationConfig 테스트" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-09-15T14:35:35" hostname="Sunhong-Mac-mini.local" time="0.029">
+  <properties/>
+  <testcase name="ObjectMapper가 snake_case를 사용하는지 확인" classname="com.example.categoryservice.infrastructure.config.ApplicationConfigTest" time="0.018"/>
+  <testcase name="Validator Bean이 올바르게 생성되는지 확인" classname="com.example.categoryservice.infrastructure.config.ApplicationConfigTest" time="0.003"/>
+  <testcase name="ObjectMapper Bean이 올바르게 설정되는지 확인" classname="com.example.categoryservice.infrastructure.config.ApplicationConfigTest" time="0.003"/>
+  <testcase name="Validator가 정상적으로 동작하는지 확인" classname="com.example.categoryservice.infrastructure.config.ApplicationConfigTest" time="0.0"/>
+  <testcase name="ObjectMapper가 LocalDateTime을 올바르게 처리하는지 확인" classname="com.example.categoryservice.infrastructure.config.ApplicationConfigTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

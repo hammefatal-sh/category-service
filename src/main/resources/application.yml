@@ -43,10 +43,91 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, info, metrics
+        include: health, info, metrics, prometheus, configprops, env, loggers, httptrace, threaddump, heapdump
+      base-path: /actuator
+    enabled-by-default: false
   endpoint:
     health:
+      enabled: true
       show-details: always
+      show-components: always
+      probes:
+        enabled: true
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    configprops:
+      enabled: true
+      show-values: when-authorized
+    env:
+      enabled: true
+      show-values: when-authorized
+    loggers:
+      enabled: true
+    httptrace:
+      enabled: true
+    threaddump:
+      enabled: true
+    heapdump:
+      enabled: true
+  info:
+    build:
+      enabled: true
+    git:
+      mode: full
+    env:
+      enabled: true
+    java:
+      enabled: true
+  health:
+    db:
+      enabled: true
+    diskspace:
+      enabled: true
+    ping:
+      enabled: true
+
+# Application Information
+info:
+  app:
+    name: '@project.name@'
+    description: '온라인 쇼핑몰 카테고리 관리 서비스'
+    version: '@project.version@'
+    encoding: '@project.build.sourceEncoding@'
+    java:
+      version: '@java.version@'
+  build:
+    artifact: '@project.artifactId@'
+    name: '@project.name@'
+    time: '@timestamp@'
+    version: '@project.version@'
+    group: '@project.groupId@'
+  team:
+    name: 'Development Team'
+    email: 'dev@example.com'
+    website: 'https://github.com/example/category-service'
+  features:
+    - 'CRUD Operations for Categories'
+    - 'Hierarchical Category Tree Structure'
+    - 'High Performance Caching with Caffeine'
+    - 'RESTful API with OpenAPI Documentation'
+    - 'Comprehensive Health Monitoring'
+  architecture:
+    pattern: 'Hexagonal Architecture (Ports & Adapters)'
+    layers:
+      - 'Domain Layer (Entities, Value Objects, Business Logic)'
+      - 'Application Layer (Use Cases, Services)'
+      - 'Infrastructure Layer (JPA, REST, Cache)'
+  tech-stack:
+    framework: 'Spring Boot 3.2.0'
+    language: 'Java 17'
+    database: 'H2 (Embedded)'
+    cache: 'Caffeine'
+    documentation: 'SpringDoc OpenAPI 3.0'
+    build-tool: 'Gradle'
 
 logging:
   level:
