@@ -160,4 +160,60 @@ class CategoryTest {
         assertThat(category1).isNotEqualTo(category2);
         assertThat(category1.hashCode()).isNotEqualTo(category2.hashCode());
     }
+
+    @Test
+    void 카테고리_문자열_표현_확인() {
+        // given
+        CategoryId id = new CategoryId(1L);
+        Category category = Category.createRoot(id, "전자제품", "전자제품 카테고리");
+
+        // when
+        String result = category.toString();
+
+        // then
+        assertThat(result).contains("전자제품");
+        assertThat(result).contains("1");
+    }
+
+    @Test
+    void 카테고리_생성시_생성일시_자동_설정() {
+        // given
+        CategoryId id = new CategoryId(1L);
+
+        // when
+        Category category = Category.createRoot(id, "전자제품", "전자제품 카테고리");
+
+        // then
+        assertThat(category.getCreatedAt()).isNotNull();
+        assertThat(category.getUpdatedAt()).isNotNull();
+        assertThat(category.getCreatedAt()).isEqualTo(category.getUpdatedAt());
+    }
+
+    @Test
+    void 카테고리_업데이트시_수정일시_변경() throws InterruptedException {
+        // given
+        CategoryId id = new CategoryId(1L);
+        Category category = Category.createRoot(id, "전자제품", "전자제품 카테고리");
+
+        // 시간 차이를 보장하기 위해 잠시 대기
+        Thread.sleep(10);
+
+        // when
+        category.updateInfo("전자기기", "전자기기 카테고리");
+
+        // then
+        assertThat(category.getUpdatedAt()).isAfter(category.getCreatedAt());
+    }
+
+    @Test
+    void 너무_긴_설명으로_카테고리_생성시_예외발생() {
+        // given
+        CategoryId id = new CategoryId(1L);
+        String longDescription = "a".repeat(501); // 501자
+
+        // when & then
+        assertThatThrownBy(() -> Category.createRoot(id, "전자제품", longDescription))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Category description cannot exceed 500 characters");
+    }
 }
