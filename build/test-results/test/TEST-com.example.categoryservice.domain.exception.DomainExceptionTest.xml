@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.categoryservice.domain.exception.DomainExceptionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-09-15T13:41:30" hostname="Sunhong-Mac-mini.local" time="0.023">
+<testsuite name="com.example.categoryservice.domain.exception.DomainExceptionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-09-15T13:52:09" hostname="Sunhong-Mac-mini.local" time="0.002">
   <properties/>
-  <testcase name="CategoryHasChildrenException_메시지로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.018"/>
-  <testcase name="CategoryNotFoundException_CategoryId로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.001"/>
-  <testcase name="CircularReferenceException_CategoryId들로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.002"/>
+  <testcase name="CategoryHasChildrenException_메시지로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.0"/>
+  <testcase name="CategoryNotFoundException_CategoryId로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.0"/>
+  <testcase name="CircularReferenceException_CategoryId들로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.001"/>
   <testcase name="CategoryHasChildrenException_CategoryId로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.0"/>
   <testcase name="CircularReferenceException_메시지로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.0"/>
-  <testcase name="CategoryNotFoundException_메시지로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.0"/>
+  <testcase name="CategoryNotFoundException_메시지로_생성()" classname="com.example.categoryservice.domain.exception.DomainExceptionTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

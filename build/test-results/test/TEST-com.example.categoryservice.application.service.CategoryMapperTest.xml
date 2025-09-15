@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.categoryservice.application.service.CategoryMapperTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-15T13:52:08" hostname="Sunhong-Mac-mini.local" time="0.022">
+  <properties/>
+  <testcase name="루트_카테고리를_응답객체로_변환()" classname="com.example.categoryservice.application.service.CategoryMapperTest" time="0.021"/>
+  <testcase name="카테고리를_응답객체로_변환()" classname="com.example.categoryservice.application.service.CategoryMapperTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
