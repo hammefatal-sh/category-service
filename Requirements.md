@@ -7,7 +7,7 @@
 - **목적**: 온라인 쇼핑몰의 상품 카테고리 관리를 위한 마이크로서비스
 
 ### 1.2 기술 스택
-- **Framework**: Spring Boot 3.2.0
+- **Framework**: Spring Boot 3.2.11
 - **Language**: Java 17
 - **Database**: H2 Database (Embedded)
 - **Build Tool**: Gradle
