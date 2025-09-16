@@ -17,3 +17,7 @@ logs/
 # 운영체제 관련 파일
 .DS_Store
 Thumbs.db
+
+# IDE 관련 파일들
+.vscode/        # VS Code 설정 폴더
+*.code-workspace # VS Code 워크스페이스 파일
