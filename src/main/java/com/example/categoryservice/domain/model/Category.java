@@ -38,6 +38,7 @@ public class Category {
 
     private Category(CategoryId id, String name, String description, CategoryId parentId) {
         validateName(name);
+        validateDescription(description);
         this.id = id;
         this.name = name;
         this.description = description;
@@ -59,6 +60,7 @@ public class Category {
 
     public void updateInfo(String name, String description) {
         validateName(name);
+        validateDescription(description);
         this.name = name;
         this.description = description;
     }
@@ -76,6 +78,12 @@ public class Category {
         }
         if (name.length() > 100) {
             throw new IllegalArgumentException("Category name cannot exceed 100 characters");
+        }
+    }
+
+    private void validateDescription(String description) {
+        if (description != null && description.length() > 500) {
+            throw new IllegalArgumentException("Category description cannot exceed 500 characters");
         }
     }
 

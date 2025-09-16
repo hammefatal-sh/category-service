@@ -5,8 +5,6 @@ import com.example.categoryservice.application.port.out.CategoryTreeResponse;
 import com.example.categoryservice.domain.model.Category;
 import com.example.categoryservice.domain.model.CategoryId;
 import com.example.categoryservice.domain.repository.CategoryRepository;
-import com.example.categoryservice.infrastructure.config.CategoryCacheConfig;
-import com.example.categoryservice.infrastructure.config.CategoryCacheProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,9 +21,10 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest(classes = {CategoryService.class, CategoryMapper.class, CategoryCacheConfig.class, CategoryCacheProperties.class})
+@SpringBootTest
 @ActiveProfiles("test")
 @DisplayName("CategoryService 캐시 테스트")
+@Transactional
 class CategoryServiceCacheTest {
 
     @Autowired
@@ -66,7 +65,8 @@ class CategoryServiceCacheTest {
 
         // 캐시에 값이 저장되어 있는지 확인
         org.springframework.cache.Cache categoriesCache = cacheManager.getCache("categories");
-        assertThat(categoriesCache.get(categoryId)).isNotNull();
+        assertThat(categoriesCache).isNotNull();
+        assertThat(categoriesCache.get(categoryId.getValue())).isNotNull();
     }
 
     @Test
@@ -92,6 +92,7 @@ class CategoryServiceCacheTest {
 
         // 캐시에 값이 저장되어 있는지 확인
         org.springframework.cache.Cache categoryTreeCache = cacheManager.getCache("categoryTree");
+        assertThat(categoryTreeCache).isNotNull();
         assertThat(categoryTreeCache.get("all")).isNotNull();
     }
 
@@ -115,14 +116,15 @@ class CategoryServiceCacheTest {
 
         // then
         assertThat(result1).isEqualTo(result2);
-        // Repository의 findAll은 한 번만 호출되어야 함
+        // Repository의 findAll은 한 번만 호출되어야 함 (캐시됨)
         verify(categoryRepository, times(1)).findAll();
-        // existsById는 캐시되지 않으므로 두 번 호출됨
-        verify(categoryRepository, times(2)).existsById(rootId);
+        // existsById는 캐시되지 않지만, 전체 메소드가 캐시되면서 두 번째 호출에서는 existsById도 호출되지 않음
+        verify(categoryRepository, times(1)).existsById(rootId);
 
-        // 캐시에 값이 저장되어 있는지 확인
+        // 캐시에 값이 저장되어 있는지 확인 - 캐시 키는 rootCategoryId.value를 사용
         org.springframework.cache.Cache categoryTreeCache = cacheManager.getCache("categoryTree");
-        assertThat(categoryTreeCache.get("tree:" + rootId)).isNotNull();
+        assertThat(categoryTreeCache).isNotNull();
+        assertThat(categoryTreeCache.get(rootId.getValue())).isNotNull();
     }
 
     @Test
