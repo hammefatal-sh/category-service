@@ -1,0 +1,19 @@
+# Gradle 관련 파일들
+.gradle/
+build/ # 빌드 결과물
+
+# 클래스 파일
+*.class
+
+# 로그 파일
+*.log
+logs/
+
+# 아카이브 파일
+*.jar
+*.war
+*.zip
+
+# 운영체제 관련 파일
+.DS_Store
+Thumbs.db
